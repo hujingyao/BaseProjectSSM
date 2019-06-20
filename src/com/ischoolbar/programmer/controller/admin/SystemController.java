@@ -34,17 +34,23 @@ public class SystemController {
 	
 	@RequestMapping(value = "/index" ,method = RequestMethod.GET)
 	
-//	public String index() {
-//		return "system/index";
-//	}
-	
-	
 	public ModelAndView index(ModelAndView model) {
 		model.setViewName("system/index");
 		model.addObject("name", "huzx");
 		return model;
 		
 	}
+	
+//»¶Ó­Ò³Ãæ
+	@RequestMapping(value = "/welcome" ,method = RequestMethod.GET)
+	
+	public ModelAndView welcome(ModelAndView model) {
+		model.setViewName("system/welcome");
+	
+		return model;
+		
+	}
+	
 	
 	
 	@RequestMapping(value = "/login" ,method = RequestMethod.GET)
@@ -107,7 +113,7 @@ public class SystemController {
 		
 	}
 	
-	
+	request.getSession().setAttribute("admin", findbyUsername);
 	ret.put("type","success");
 	ret.put("msg","µÇÂ½³É¹¦");
 		
